@@ -19,13 +19,13 @@ children = int(input("How many children are there? "))
 adults = int(input("How many adults are there? ")) 
 tax_rate = round(float(input("What is the sales tax rate? ")), 2) 
 
-subtotal = child_meal*children + adult_meal*adults
+subtotal = child_meal * children + adult_meal * adults
 print(f"\nSubtotal: ${subtotal}") 
-sales_tax = round(tax_rate*float(subtotal)/100, 2)
+sales_tax = round(tax_rate * float(subtotal) / 100, 2)
 print(f"Sales Tax: ${sales_tax}") 
 tip = float(input("Do you want to give a tip? If not, type 0. If so, type in the value: "))
-total = round(sales_tax+subtotal+tip, 2)
+total = round(sales_tax + subtotal + tip, 2)
 print(f"Total: ${total}") 
 
 payment_amount = round(float(input(f"\nWhat is the payment amount? ")), 2) 
-print(f"Change: ${payment_amount-total}") 
+print(f"Change: ${(payment_amount - total):.2f}") 
