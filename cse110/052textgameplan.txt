@@ -1,0 +1,23 @@
+Scenarios:
+
+Scenario 1:
+User will be prompted to choose if he'd like to live by himself or with someone
+else. Choices: Yes/No
+
+Scenario 1.1:
+User will be prompted to choose if he'd like to live with his best friend or with his family. Choices: Friends/Family
+
+Scenario 1.2:
+User will be prompted to choose if he'd like to have known or unknown friends ashis neighboors. Known/Unknown
+
+Scenario 1.1.1:
+User will be prompted to choose what he'd like to say to his family for not choosing to live with them. Choices: Sorry/Nothing
+
+Scenario 1.1.2:
+User will be prompted to choose what he'd like to tell his friend for choosing his family. Choices: 
+
+Scenario 1.2.1:
+User will be prompted to choose what he'd like to do together with his known neighboors. Choiches: Drink/Eat/Dance
+
+Scenario 1.2.2: 
+User will be prompted to choose how he'd like to meet his neighboors. Choices: Phisically/Virtually
