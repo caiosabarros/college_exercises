@@ -62,7 +62,7 @@ new_image.show()
 new_image.save("./my_random_image.jpg")
 
 #Load the green and background image
-green_image_original = Image.open("./cse110_images/boat.jpg")
+green_image_original = Image.open("./cse110_images/cactus.jpg")
 green_pixels_image = green_image_original.load()
 
 background_original = Image.open("./cse110_images/earth.jpg")
