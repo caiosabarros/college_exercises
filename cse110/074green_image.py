@@ -3,6 +3,7 @@ import random
 print("The library is loaded correctly")
 #The command: python -m pip install pillow --user actually works for python3
 
+
 image_original = Image.open("./cse110_images/beach.jpg")
 
 image_original.show()
@@ -61,11 +62,15 @@ assert pixels_looped == image_original.size[0]*image_original.size[1], "programi
 new_image.show()
 new_image.save("./my_random_image.jpg")
 
+#Ask for the images
+bk_image = input("What is the background image? ")
+gr_image = input("What is the green image? ")
+
 #Load the green and background image
-green_image_original = Image.open("./cse110_images/cactus.jpg")
+green_image_original = Image.open(f"./cse110_images/{gr_image}")
 green_pixels_image = green_image_original.load()
 
-background_original = Image.open("./cse110_images/earth.jpg")
+background_original = Image.open(f"./cse110_images/{bk_image}")
 background_pixels = background_original.load()
 
 height_green, width_green = green_image_original.size
