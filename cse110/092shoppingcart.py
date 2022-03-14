@@ -18,7 +18,12 @@ def select_action():
     print("3. Remove item")
     print("4. Compute total")
     print("5. Quit")
-    action = int(input("Please enter an action: ")) 
+    action = 0
+    try:
+        action = int(input("Please enter an action: ")) 
+    except: 
+        print("Please, provide a correct answer")
+        select_action()
 
     if action == 1:
         add_item()
@@ -28,16 +33,18 @@ def select_action():
         remove_item()
     elif action == 4:
         compute_total()
-    else:
+    elif action == 5:
         terminate()
+    else:
+        select_action()
 
 def add_item():
     item = input("What item would you like to add? ")    
-    price = input(f"What is the price of {item}? ")
+    price = float(input(f"What is the price of {item}? "))
     #Add to the list
     items.append(item)
     prices.append(price)
-    print(f"{item} has been added to the cart. ")
+    print(f"{item} has been added to the cart. \n")
     select_action()
 
 def view_cart():
@@ -45,16 +52,17 @@ def view_cart():
     #Show each item in the list
     i = 1
     for item in items:
-        print(f"{i}. {items[i-1]} - ${prices[i-1]}")
+        print(f"{i}. {items[i-1]} - ${float(prices[i-1]):.2f}")
         i += 1
+    print()
     select_action()
 
 def remove_item():
-    item_to_remove = input("Which item would you like to remove? ")
+    item_to_remove = int(input("Which item would you like to remove? "))
     #remove item from the list
-    item_index = items.index(item_to_remove)
-    items.remove(items[item_index])
-    prices.remove(prices[item_index])
+    #item_index = items.index(item_to_remove)
+    items.pop(item_to_remove-1)
+    prices.pop(item_to_remove-1)
     print("Item removed.")
     select_action()
 
@@ -62,8 +70,8 @@ def compute_total():
     #compute total
     total = 0
     for price in prices:
-        total += int(price)
-    print(f"The total price of the items in the shopping cart is ${total}")
+        total += float(price)
+    print(f"The total price of the items in the shopping cart is ${total:.2f}\n")
     select_action()
 
 def terminate():
